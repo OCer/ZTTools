@@ -7,6 +7,7 @@
 //
 
 #import "ZTViewController.h"
+#import <ZTTools/ZTToolsHeader.h>
 
 @interface ZTViewController ()
 
@@ -17,13 +18,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.backgroundColor = UIColor.greenColor;
+    [button setTitle:@"点击" forState:UIControlStateNormal];
+    [button setTitleColor:UIColor.redColor forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(test) forControlEvents:UIControlEventTouchUpInside];
+    button.frame = CGRectMake(20, 200, 100, 30);
+    [self.view addSubview:button];
 }
 
-- (void)didReceiveMemoryWarning
+- (void)test
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [ZTSheetView showSheetViewWithData:@[@"1", @"2", @"3"] block:nil cancelBlock:nil];
 }
 
 @end

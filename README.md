@@ -22,7 +22,7 @@ pod 'ZTTools'
 
 ## Author
 
-git, Cer@Ztj.cn
+git, Cer@Ztj.cn,Nakiri
 
 ## License
 

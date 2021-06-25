@@ -16,9 +16,6 @@ FOUNDATION_EXPORT const unsigned char ZTToolsVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <ZTTools/PublicHeader.h>
 
-// 文件包含
-#ifdef __OBJC__ // 防止C文件包含OC的头文件而引发的编译报错
-
 #import <ZTTools/ZTLanguageManager.h>
 #import <ZTTools/ZTDeviceManager.h>
 #import <ZTTools/ZTReflection.h>
@@ -36,7 +33,5 @@ FOUNDATION_EXPORT const unsigned char ZTToolsVersionString[];
 #import <ZTTools/ZTTextView.h>
 #import <ZTTools/ZTSheetView.h>
 #import <ZTTools/ZTAlertView.h>
-
-#endif
 
 #endif /* ZTToolsHeader_h */
