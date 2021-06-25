@@ -1,0 +1,21 @@
+#use_frameworks!
+
+platform :ios, '11.0'
+
+# 工作空间名称
+workspace 'ZTTools.xcworkspace' # 同一个工作空间，多个Project使用pod时，需要添加工作空间名称
+project 'ZTTools.xcodeproj' # 主工程路径
+project '../ZTToolsSDK/ZTToolsSDK.xcodeproj' # 别的工程路径
+
+# 主工程（带podfile的工程）
+target 'ZTTools_Example' do 
+  project 'ZTTools.xcodeproj'
+  pod 'ZTTools', :path => '../'
+end
+
+# 同一个工作空间里面别的项目依赖
+target 'ZTToolsSDK' do
+  project '../ZTToolsSDK/ZTToolsSDK.xcodeproj' # 项目路径
+  pod 'AFNetworking'
+  pod 'Masonry'
+end

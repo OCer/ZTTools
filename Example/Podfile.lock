@@ -1,0 +1,43 @@
+PODS:
+  - AFNetworking (4.0.1):
+    - AFNetworking/NSURLSession (= 4.0.1)
+    - AFNetworking/Reachability (= 4.0.1)
+    - AFNetworking/Security (= 4.0.1)
+    - AFNetworking/Serialization (= 4.0.1)
+    - AFNetworking/UIKit (= 4.0.1)
+  - AFNetworking/NSURLSession (4.0.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (4.0.1)
+  - AFNetworking/Security (4.0.1)
+  - AFNetworking/Serialization (4.0.1)
+  - AFNetworking/UIKit (4.0.1):
+    - AFNetworking/NSURLSession
+  - Masonry (1.1.0)
+  - ZTTools (0.1.0):
+    - AFNetworking
+    - Masonry
+
+DEPENDENCIES:
+  - AFNetworking
+  - Masonry
+  - ZTTools (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - AFNetworking
+    - Masonry
+
+EXTERNAL SOURCES:
+  ZTTools:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  ZTTools: 6891733723bce15d191c3fbc34ae25203f5f9d0f
+
+PODFILE CHECKSUM: 592309a5f9c5320e5a11a83a0d5fd1de0f50750c
+
+COCOAPODS: 1.10.0

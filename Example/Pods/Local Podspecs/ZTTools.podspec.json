@@ -1,0 +1,39 @@
+{
+  "name": "ZTTools",
+  "version": "0.1.0",
+  "summary": "工具库",
+  "description": "私有工具库，用到的东西都会放到这里，工具库也分为权限、逻辑、UI等",
+  "homepage": "https://github.com/git/ZTTools",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": "Nakiri",
+  "source": {
+    "git": "https://github.com/git/ZTTools.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "11.0"
+  },
+  "xcconfig": {
+    "OTHER_LDFLAGS": "-ObjC"
+  },
+  "source_files": "ZTTools/Classes/**/*",
+  "frameworks": [
+    "UIKit",
+    "Foundation",
+    "Photos",
+    "UserNotifications",
+    "AVFoundation",
+    "CoreGraphics"
+  ],
+  "dependencies": {
+    "AFNetworking": [
+
+    ],
+    "Masonry": [
+
+    ]
+  }
+}
