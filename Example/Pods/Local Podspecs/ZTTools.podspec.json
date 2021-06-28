@@ -1,6 +1,6 @@
 {
   "name": "ZTTools",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "summary": "工具库",
   "description": "私有工具库，用到的东西都会放到这里，工具库也分为权限、逻辑、UI等",
   "homepage": "https://github.com/OCer/ZTTools",
@@ -11,7 +11,7 @@
   "authors": "Nakiri",
   "source": {
     "git": "https://github.com/OCer/ZTTools.git",
-    "tag": "0.1.0"
+    "tag": "0.1.1"
   },
   "platforms": {
     "ios": "11.0"

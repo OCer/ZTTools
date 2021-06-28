@@ -16,6 +16,9 @@ FOUNDATION_EXPORT const unsigned char ZTToolsVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <ZTTools/PublicHeader.h>
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-umbrella"
+
 #import <ZTTools/ZTLanguageManager.h>
 #import <ZTTools/ZTDeviceManager.h>
 #import <ZTTools/ZTReflection.h>
@@ -33,5 +36,7 @@ FOUNDATION_EXPORT const unsigned char ZTToolsVersionString[];
 #import <ZTTools/ZTTextView.h>
 #import <ZTTools/ZTSheetView.h>
 #import <ZTTools/ZTAlertView.h>
+
+#pragma clang diagnostic pop
 
 #endif /* ZTToolsHeader_h */
