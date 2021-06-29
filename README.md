@@ -22,7 +22,7 @@ pod 'ZTTools'
 
 ## Author
 
-git, Cer@Ztj.cn,Nakiri
+'Nakiri' => '347464661@qq.com'
 
 ## License
 
