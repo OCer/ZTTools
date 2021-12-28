@@ -9,9 +9,9 @@
 
 @interface ZTTools : NSObject
 
-+ (NSMutableArray *)regex:(NSString *)regex AndText:(NSString *)text;  // 正则表达式，匹配并返回结果集
++ (NSMutableArray *)regex:(NSString *)regex AndText:(NSString *)text isCaseInsensitive:(BOOL)isCaseInsensitive; // 正则表达式，匹配并返回结果集；isCaseInsensitive值为YES时，不区分大小写
 
-+ (NSUInteger)numberOfRegex:(NSString *)regex AndText:(NSString *)text; // 正则表达式，返回匹配个数
++ (NSUInteger)numberOfRegex:(NSString *)regex AndText:(NSString *)text isCaseInsensitive:(BOOL)isCaseInsensitive; // 正则表达式，返回匹配个数；isCaseInsensitive值为YES时，不区分大小写
 
 + (BOOL)isEmpty:(NSString *)str; // 判断内容是否全部为空格  yes 全部为空格  no 不是
 
