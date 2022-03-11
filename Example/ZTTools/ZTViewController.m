@@ -30,7 +30,8 @@
 
 - (void)test
 {
-    [ZTSheetView showSheetViewWithData:@[@"1", @"2", @"3"] block:nil cancelBlock:nil];
+    NSLog(@"%@", [ZTDeviceManager platformString]);
+//    [ZTSheetView showSheetViewWithData:@[@"1", @"2", @"3"] block:nil cancelBlock:nil];
 }
 
 @end
