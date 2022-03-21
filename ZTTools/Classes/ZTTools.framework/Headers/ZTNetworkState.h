@@ -13,12 +13,21 @@ typedef void (^ZTNetworkStateChangeBlock)(AFNetworkReachabilityStatus status);
 
 @interface ZTNetworkState : NSObject
 
-+ (instancetype)sharedNetworkState;      // 获取单例
++ (instancetype _Nonnull)sharedNetworkState;
 
-- (AFNetworkReachabilityStatus)state; // 当前网络状态
-- (NSString *)stateString;
-- (BOOL)checkNetWorkIsOk; //是否有网络，YES是有
-- (BOOL)addNetworkStateChangeBlock:(ZTNetworkStateChangeBlock)block withKey:(NSString *)key; // key是唯一标识
-- (void)removeNetworkStateChangeBlockWithKey:(NSString *)key; // 当需要监听的对象被销毁时，需要把block删掉
+/// 当前网络状态
+- (AFNetworkReachabilityStatus)state;
+
+/// 当前网络状态字符串
+- (NSString * _Nonnull)stateString;
+
+/// 是否连接有网络，YES是有
+- (BOOL)checkNetWorkIsOk;
+
+/// 添加网络变化回调（会强引用，需要外部自行weak）；key是唯一标识
+- (BOOL)addNetworkStateChangeBlock:(ZTNetworkStateChangeBlock _Nonnull)block withKey:(NSString * _Nonnull)key;
+
+/// 删除网络变化回调；当需要监听的对象被销毁时，需要把block删掉
+- (void)removeNetworkStateChangeBlockWithKey:(NSString * _Nonnull)key;
 
 @end

@@ -10,7 +10,10 @@
 
 @interface UIView (EqualMargin)
 
-- (void)distributeSpacingHorizontallyWith:(NSArray*)views;
-- (void)distributeSpacingVerticallyWith:(NSArray*)views;
+/// 横向等间距布局
+- (void)distributeSpacingHorizontallyWith:(NSArray * _Nonnull)views;
+
+/// 竖向等间距布局
+- (void)distributeSpacingVerticallyWith:(NSArray * _Nonnull)views;
 
 @end

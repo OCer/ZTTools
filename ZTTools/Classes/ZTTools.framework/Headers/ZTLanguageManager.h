@@ -15,21 +15,28 @@ typedef enum : NSUInteger
     ZTLanguageTypeEN          // 英文
 } ZTLanguageType;
 
-extern NSString * const kNotificationWithChangeLanguage; // 切换语言的通知名称
+/// 切换语言的通知名称
+extern NSString * _Nonnull const kNotificationWithChangeLanguage;
 
 @interface ZTLanguageManager : NSObject
 
-@property(nonatomic, assign) ZTLanguageType type; // 当前的语言类型，外部修改该类型时就会设置语言
+/// 当前的语言类型，外部修改该类型时就会设置语言
+@property(nonatomic, assign) ZTLanguageType type;
 
-+ (instancetype)sharedManager;
++ (instancetype _Nonnull)sharedManager;
 
-- (NSUInteger)index; // 获取当前设置语言的下标
-- (NSString *)getCurrentLanguageCode; // 获取当前设置的语言代码
-- (NSString *)getCurrentLanguage;     // 获取当前语言的名称
+/// 获取当前设置语言的下标
+- (NSUInteger)index;
 
-// 获取国际化文本
-- (NSString *)localizedStringForKey:(NSString *)key value:(NSString *)value table:(NSString *)tableName;
-- (NSString *)localizedStringForKey:(NSString *)key value:(NSString *)value;
-- (NSString *)localizedStringForKey:(NSString *)key;
+/// 获取当前设置的语言代码
+- (NSString * _Nonnull)getCurrentLanguageCode;
+
+/// 获取当前语言的名称
+- (NSString * _Nonnull)getCurrentLanguage;
+
+/// 获取国际化文本
+- (NSString * _Nonnull)localizedStringForKey:(NSString * _Nonnull)key value:(NSString * _Nonnull)value table:(NSString * _Nullable)tableName;
+- (NSString * _Nonnull)localizedStringForKey:(NSString * _Nonnull)key value:(NSString * _Nonnull)value;
+- (NSString * _Nonnull)localizedStringForKey:(NSString * _Nonnull)key;
 
 @end

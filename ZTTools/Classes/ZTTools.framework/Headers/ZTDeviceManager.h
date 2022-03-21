@@ -12,46 +12,56 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ZTDeviceManager : NSObject
 
-+ (UIWindow *)getKeyWindow; // 获取keyWindow
+/// 获取keyWindow
++ (UIWindow * _Nonnull)getKeyWindow;
 
-+ (BOOL)isFullScreen; // 判断是否是全面屏
+/// 判断是否是全面屏
++ (BOOL)isFullScreen;
 
-+ (NSString *)platformString;  // 获取手机型号
+/// 获取手机型号
++ (NSString * _Nonnull)platformString;
 
-+ (NSString *)getAPPName; // 获取app名称
+/// 获取app名称
++ (NSString * _Nonnull)getAPPName;
 
-+ (NSString *)getAPPBundleIdentifier; // 获 Bundle Id
+/// 获 Bundle Id
++ (NSString * _Nonnull)getAPPBundleIdentifier;
 
-+ (NSString *)getAPPVersion; // 获取app版本
+/// 获取app版本
++ (NSString * _Nonnull)getAPPVersion;
 
-+ (NSString *)getAPPBuild; // 获取app build版本
+/// 获取app build版本
++ (NSString * _Nonnull)getAPPBuild;
 
-+ (CGFloat)getSystemVersion; // 获取iOS版本号
+/// 获取iOS版本号
++ (CGFloat)getSystemVersion;
 
-+ (NSString *)getSystemVersionString; // 获取iOS版本号字符串
+/// 获取iOS版本号字符串
++ (NSString * _Nonnull)getSystemVersionString;
 
-+ (NSString *)getPreferredLanguage; // 获取系统的当前语言代码
+/// 获取系统的当前语言代码
++ (NSString * _Nonnull)getPreferredLanguage;
 
-/**
- *  获取总硬盘大小(单位K)
- */
+/// 获取总硬盘大小(单位KB)
 + (double)totalDiskSpace;
 
-/**
- *  获取剩余硬盘大小(单位K)
- */
+/// 获取剩余硬盘大小(单位KB)
 + (double)freeDiskSpace;
 
-/**
- *  获取APP所占用的内存（单位：MB）
- */
+/// 获取APP所占用的内存（单位：MB）
 + (double)usedMemory;
 
-+ (void)vibration; // 震动反馈 一般性震动
+/// 震动反馈 一般性震动
++ (void)vibration;
 
-+ (void)vibrationWithSwitch; // Switch切换震动
+/// Switch切换震动
++ (void)vibrationWithSwitch;
 
-+ (void)vibrationWithDone:(UINotificationFeedbackType)type; // 完成某样任务震动
+/// 完成某样任务震动
++ (void)vibrationWithDone:(UINotificationFeedbackType)type;
+
+/// 播放拍照声音
++ (void)playCameraSound;
 
 @end
 

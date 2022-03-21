@@ -20,6 +20,7 @@ typedef void(^ZTSheetViewCancelBlock)(void);
 
 NS_ASSUME_NONNULL_BEGIN
 
+/// 一个能展示日期或者自定义文本的Sheet
 @interface ZTSheetView : UIView
 
 + (void)showSheetViewWithData:(NSArray<NSString *> *)data block:(ZTSheetViewBlock _Nullable)block cancelBlock:(ZTSheetViewCancelBlock _Nullable)cancelBlock;

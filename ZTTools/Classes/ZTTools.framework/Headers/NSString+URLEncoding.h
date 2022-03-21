@@ -28,7 +28,10 @@
 
 @interface NSString (OAURLEncodingAdditions)
 
-- (NSString *)URLEncodedString;   // 中文转编码
-- (NSString *)URLDecodedString;   // 编码转中文
+/// 中文转编码
+- (NSString * _Nonnull)URLEncodedString;
+
+/// 编码转中文
+- (NSString * _Nonnull)URLDecodedString;
 
 @end

@@ -10,7 +10,10 @@
 
 @interface ZTLabel : UILabel
 
-@property(nonatomic, assign) UIEdgeInsets edgeInsets; // 内边距，默认(0, 0, 0, -10)
-@property(nonatomic, assign) BOOL isCopy;             // 是否支持拷贝，YES表示支持（默认不支持）
+/// 内边距，默认(0, 0, 0, -10)
+@property(nonatomic, assign) UIEdgeInsets edgeInsets;
+
+/// 是否支持拷贝，YES表示支持（默认不支持）
+@property(nonatomic, assign) BOOL isCopy;
 
 @end

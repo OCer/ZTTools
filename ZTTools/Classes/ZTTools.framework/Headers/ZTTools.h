@@ -6,53 +6,97 @@
 //
 
 #import <Foundation/Foundation.h>
+@import Photos;
 
 @interface ZTTools : NSObject
 
-+ (NSMutableArray *)regex:(NSString *)regex AndText:(NSString *)text isCaseInsensitive:(BOOL)isCaseInsensitive; // 正则表达式，匹配并返回结果集；isCaseInsensitive值为YES时，不区分大小写
+/// 正则表达式，匹配并返回结果集；isCaseInsensitive值为YES时，不区分大小写
++ (NSMutableArray * _Nonnull)regex:(NSString * _Nonnull)regex AndText:(NSString * _Nonnull)text isCaseInsensitive:(BOOL)isCaseInsensitive;
 
-+ (NSUInteger)numberOfRegex:(NSString *)regex AndText:(NSString *)text isCaseInsensitive:(BOOL)isCaseInsensitive; // 正则表达式，返回匹配个数；isCaseInsensitive值为YES时，不区分大小写
+/// 正则表达式，返回匹配个数；isCaseInsensitive值为YES时，不区分大小写
++ (NSUInteger)numberOfRegex:(NSString * _Nonnull)regex AndText:(NSString * _Nonnull)text isCaseInsensitive:(BOOL)isCaseInsensitive;
 
-+ (BOOL)isEmpty:(NSString *)str; // 判断内容是否全部为空格  yes 全部为空格  no 不是
+/// 判断内容是否全部为空格  yes 全部为空格  no 不是
++ (BOOL)isEmpty:(NSString * _Nullable)str;
 
-+ (BOOL)isNull:(id)object; // 判断空对象
+/// 判断空对象
++ (BOOL)isNull:(id _Nullable)object;
 
-+ (BOOL)isAllCharacterString:(NSString *)string; // 判断是否全是特殊字符
+/// 判断是否全是特殊字符
++ (BOOL)isAllCharacterString:(NSString * _Nullable)string;
 
-+ (BOOL)isSameStringFormText:(NSString *)text; // 该字符串是否是同一个字符
+/// 该字符串是否是同一个字符
++ (BOOL)isSameStringFormText:(NSString * _Nullable)text;
 
-+ (BOOL)isContainsEmoji:(NSString *)text;  // 判断是否有自带表情
+/// 判断是否有自带表情
++ (BOOL)isContainsEmoji:(NSString * _Nonnull)text;
 
-+ (BOOL)checkUserIdCard:(NSString *)idCard; // 验证身份证格式是否是正确的
+/// 验证身份证格式是否是正确的
++ (BOOL)checkUserIdCard:(NSString * _Nonnull)idCard;
 
-+ (NSDictionary *)getObjectDataNotNil:(id)obj; // 把类的属性转成字典，去掉null对象值
+/// 把类的属性转成字典，去掉null对象值
++ (NSDictionary * _Nonnull)getObjectDataNotNil:(id _Nonnull)obj;
 
-+ (NSDictionary *)getObjectData:(id)obj; // 把类的属性转成字典
+/// 把类的属性转成字典
++ (NSDictionary * _Nonnull)getObjectData:(id _Nonnull)obj;
 
-+ (void)resetClass:(id)obj; // 重置类的属性
+/// 重置类的属性
++ (void)resetClass:(id _Nonnull)obj;
 
-+ (NSDictionary *)JSONObjectWithData:(NSData *)data; // json格式的data转字典
+/// json格式的data转字典
++ (NSDictionary * _Nullable)JSONObjectWithData:(NSData * _Nonnull)data;
 
-+ (NSDictionary *)JSONObjectWithString:(NSString *)json; // json字符串转字典
+/// json字符串转字典
++ (NSDictionary * _Nullable)JSONObjectWithString:(NSString * _Nonnull)json;
 
-+ (NSString *)JSONStringWithDic:(NSDictionary *)dic; // 字典转json字符串
+/// 字典转json字符串
++ (NSString * _Nullable)JSONStringWithDic:(NSDictionary * _Nullable)dic;
 
-+ (NSString *)JSONStringWithData:(NSData *)jsonData; // data转json字符串
+/// data转json字符串
++ (NSString * _Nullable)JSONStringWithData:(NSData * _Nullable)jsonData;
 
-+ (NSDictionary *)parsingSubtitles:(NSString *)text; // 解析字幕
+/// 解析字幕
++ (NSDictionary * _Nullable)parsingSubtitles:(NSString * _Nullable)text;
 
-+ (NSString *)typeForImageData:(NSData *)data; // 获取图片的格式
+/// 数据大小转字符串
++ (NSString * _Nonnull)fileSizeToString:(unsigned long long)fileSize;
 
-+ (NSString *)fileSizeToString:(unsigned long long)fileSize; // 数据大小转字符串
+/// 根据path获取文件大小
++ (NSInteger)getFileSizeWithPath:(NSString * _Nonnull)path;
 
-+ (NSInteger)getFileSizeWithPath:(NSString *)path; // 根据path获取文件大小
+/// 根据path获取视频时长(秒)
++ (int)getVideoDurationWithPath:(NSString * _Nonnull)path;
 
-+ (int)getVideoDurationWithPath:(NSString *)path; // 根据path获取视频时长(秒)
+/// 快速获取一个error
++ (NSError * _Nonnull)getErrorWithTitle:(NSString * _Nullable)title message:(NSString * _Nullable)message text:(NSString * _Nullable)text code:(NSInteger)code;
 
-+ (NSError *)getErrorWithTitle:(NSString *)title message:(NSString *)message text:(NSString *)text code:(NSInteger)code; // 快速获取一个error
+/// 获取排序过的key，YES是升序
++ (NSArray<NSString *> * _Nonnull)getKeysWithDic:(NSDictionary * _Nonnull)dic withAscending:(BOOL)isAscending;
 
-+ (NSArray<NSString *> *)getKeysWithDic:(NSDictionary *)dic withAscending:(BOOL)isAscending; // 获取排序过的key，YES是升序
+/// 获取自定义相册，如果没有则创建
++ (PHAssetCollection * _Nullable)createCollectionWithTitle:(NSString * _Nonnull)title;
 
-+ (void)playCameraSound; // 播放拍照声音
+/// 保存图片到自定义相册（异步）
++ (void)saveImageToAlbumWithImage:(UIImage * _Nonnull)image
+                toAssetCollection:(PHAssetCollection * _Nonnull)targetCollection
+                  completionBlock:(void (^_Nullable)(NSError * _Nullable error))completionBlock;
+
+/// 保存图片到自定义相册（同步）
++ (void)saveImageSynchronousToAlbumWithImage:(UIImage * _Nonnull)image
+                           toAssetCollection:(PHAssetCollection * _Nonnull)targetCollection
+                             completionBlock:(void (^_Nullable)(NSError * _Nullable error))completionBlock;
+
+/// 保存视频到自定义相册（异步）
++ (void)saveVideoToAlbumWithURL:(NSURL * _Nonnull)url
+              toAssetCollection:(PHAssetCollection * _Nonnull)targetCollection
+                completionBlock:(void (^_Nullable)(NSError * _Nullable error))completionBlock;
+
+/// 保存视频到自定义相册（同步）
++ (void)saveVideoSynchronousToAlbumWithURL:(NSURL * _Nonnull)url
+                         toAssetCollection:(PHAssetCollection * _Nonnull)targetCollection
+                           completionBlock:(void (^_Nullable)(NSError * _Nullable error))completionBlock;
+
+/// 获取组件版本
++ (NSString * _Nonnull)sdkVersion;
 
 @end

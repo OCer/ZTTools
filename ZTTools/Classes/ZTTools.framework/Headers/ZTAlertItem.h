@@ -16,14 +16,14 @@ typedef enum : NSUInteger
     ZTAlertItemStyleDestructive  // 红色
 } ZTAlertItemStyle; // 按钮表现类型
 
-typedef void (^ZTAlertItemBlock)(ZTAlertItem *item);
+typedef void (^ZTAlertItemBlock)(ZTAlertItem * _Nonnull item);
 
 @interface ZTAlertItem : NSObject
 
-@property (nonatomic, copy, readonly) NSString *title;
-@property (nonatomic, assign, readonly) ZTAlertItemStyle style;
+@property(nonatomic, nullable, copy, readonly) NSString *title;
+@property(nonatomic, assign, readonly) ZTAlertItemStyle style;
 
-+ (instancetype)itemWithTitle:(NSString *)title style:(ZTAlertItemStyle)style block:(ZTAlertItemBlock)block;
-- (instancetype)initWithTitle:(NSString *)title style:(ZTAlertItemStyle)style block:(ZTAlertItemBlock)block;
++ (instancetype _Nonnull)itemWithTitle:(NSString * _Nullable)title style:(ZTAlertItemStyle)style block:(ZTAlertItemBlock _Nullable)block;
+- (instancetype _Nonnull)initWithTitle:(NSString * _Nullable)title style:(ZTAlertItemStyle)style block:(ZTAlertItemBlock _Nullable)block;
 
 @end

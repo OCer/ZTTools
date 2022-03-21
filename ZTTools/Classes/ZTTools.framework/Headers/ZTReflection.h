@@ -18,8 +18,10 @@ typedef enum : NSUInteger
 
 @interface ZTReflection : NSObject
 
-+ (ZTReflectionResults)performWithTarget:(id)target selectorStringAndParameter:(NSString *)selString, ...; // 判断能否响应某个方法，如果能响应则调用；不获取调用方法的返回值
+/// 判断能否响应某个方法，如果能响应则调用；不获取调用方法的返回值
++ (ZTReflectionResults)performWithTarget:(id _Nonnull)target selectorStringAndParameter:(NSString * _Nonnull)selString, ...;
 
-+ (ZTReflectionResults)performWithTarget:(id)target returnValue:(void *)returnValue selectorStringAndParameter:(NSString *)selString, ...; // 可以使用returnValue获取调用方法的返回值，如果returnValue为NULL则等同上面的方法，不获取返回值
+/// 可以使用returnValue获取调用方法的返回值，如果returnValue为NULL则等同上面的方法，不获取返回值
++ (ZTReflectionResults)performWithTarget:(id _Nonnull)target returnValue:(void * _Nullable)returnValue selectorStringAndParameter:(NSString * _Nonnull)selString, ...;
 
 @end

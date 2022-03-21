@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ZTTools'
-  s.version          = '0.1.4'
+  s.version          = '0.1.5'
   s.summary          = '工具库'
 
   s.description      = <<-DESC

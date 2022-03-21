@@ -12,9 +12,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ZTPermissionTools : NSObject
 
-+ (void)checkPhotoLibraryPermission:(void(^)(PHAuthorizationStatus status))block; // 检测相册访问权限
+/// 检测相册访问权限
++ (void)checkPhotoLibraryPermission:(void(^_Nullable)(PHAuthorizationStatus status))block;
 
-+ (void)isOpenMessageNotificationServiceWithBlock:(void (^)(BOOL isOpen))block; // 判断用户是否打开了消息推送
+/// 判断用户是否打开了消息推送
++ (void)isOpenMessageNotificationServiceWithBlock:(void (^_Nullable)(BOOL isOpen))block;
 
 @end
 

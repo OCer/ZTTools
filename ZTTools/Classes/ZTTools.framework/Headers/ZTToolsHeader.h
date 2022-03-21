@@ -31,6 +31,9 @@ FOUNDATION_EXPORT const unsigned char ZTToolsVersionString[];
 #import <ZTTools/NSString+MD5.h>
 #import <ZTTools/NSString+URLEncoding.h>
 #import <ZTTools/UIView+EqualMargin.h>
+#import <ZTTools/UIView+ZT.h>
+#import <ZTTools/UIImage+ZT.h>
+#import <ZTTools/UIColor+ZT.h>
 
 #import <ZTTools/ZTLabel.h>
 #import <ZTTools/ZTTextView.h>

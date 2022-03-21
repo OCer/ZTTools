@@ -17,21 +17,29 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ZTTimeTools : NSObject
 
-+ (NSString *)stringFromDate:(NSDate *)date formate:(NSString *)formate;  // 把日期转为字符串
+/// 把日期转为字符串
++ (NSString * _Nonnull)stringFromDate:(NSDate * _Nonnull)date formate:(NSString * _Nonnull)formate;
 
-+ (NSDate *)dateFromDateString:(NSString *)dateString formate:(NSString *)formate;  // 把字符串转为日期
+/// 把字符串转为日期
++ (NSDate * _Nonnull)dateFromDateString:(NSString * _Nonnull)dateString formate:(NSString * _Nonnull)formate;
 
-+ (NSString *)getTimeStampWithDate:(NSDate *)date; // 获取时间戳
+/// 获取时间戳
++ (NSString * _Nonnull)getTimeStampWithDate:(NSDate * _Nonnull)date;
 
-+ (NSDate *)timeStampToDateWithString:(NSString *)dateString; // 把时间戳字符串转为日期
+/// 把时间戳字符串转为日期
++ (NSDate * _Nonnull)timeStampToDateWithString:(NSString * _Nonnull)dateString;
 
-+ (NSString *)getTimeText:(NSTimeInterval)currentTime; // 时间转字符串（currentTime单位是秒
+// 时间转字符串（currentTime单位是秒）
++ (NSString * _Nonnull)getTimeText:(NSTimeInterval)currentTime;
 
-+ (NSString *)getDateString:(NSDate *)date withType:(ZTToolsDateType)type isStart:(BOOL)isStart; // 获取调整过的时间
+/// 获取调整过的时间
++ (NSString * _Nonnull)getDateString:(NSDate * _Nonnull)date withType:(ZTToolsDateType)type isStart:(BOOL)isStart;
 
-+ (NSString *)getWeekDayWithIndex:(NSInteger)index; // 获取星期的描述 0到6 0是星期天
+/// 获取周几的描述 0到6 0是周日
++ (NSString * _Nonnull)getWeekDayWithIndex:(NSInteger)index;
 
-+ (NSString *)getWeekDayFormIndex:(NSInteger)index; // 获取星期的描述
+/// 获取星期几的描述 0到6 0是星期天
++ (NSString * _Nonnull)getWeekDayFormIndex:(NSInteger)index;
 
 @end
 

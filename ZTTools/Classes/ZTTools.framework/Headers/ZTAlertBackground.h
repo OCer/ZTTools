@@ -24,7 +24,7 @@ typedef enum : NSUInteger
 @property(nonatomic, assign) UIBlurEffectStyle effectStyle;
 @property(nonatomic, assign) CGFloat effectAlpha;
 
-+ (instancetype)backgroundWithStyle:(ZTBackgroundStyle)style tapHidden:(BOOL)isTapHidden;
-- (instancetype)initWithWithStyle:(ZTBackgroundStyle)style tapHidden:(BOOL)isTapHidden;
++ (instancetype _Nonnull)backgroundWithStyle:(ZTBackgroundStyle)style tapHidden:(BOOL)isTapHidden;
+- (instancetype _Nonnull)initWithWithStyle:(ZTBackgroundStyle)style tapHidden:(BOOL)isTapHidden;
 
 @end

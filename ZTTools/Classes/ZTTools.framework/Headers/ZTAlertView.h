@@ -12,16 +12,16 @@
 
 @interface ZTAlertView : UIView
 
-@property(nonatomic, copy, readonly) NSString *title;
-@property(nonatomic, copy, readonly) NSString *message;
-@property(nonatomic, strong, readonly) NSArray<ZTAlertItem *> *items;
-@property(nonatomic, strong, readonly) NSArray<UITextField *> *textFields;
+@property(nonatomic, nonnull, copy, readonly) NSString *title;
+@property(nonatomic, nonnull, copy, readonly) NSString *message;
+@property(nonatomic, nonnull, strong, readonly) NSArray<ZTAlertItem *> *items;
+@property(nonatomic, nonnull, strong, readonly) NSArray<UITextField *> *textFields;
 
-+ (instancetype)alertWithTitle:(NSString *)title message:(NSString *)message background:(ZTAlertBackground *)background;
-- (instancetype)initWithTitle:(NSString *)title message:(NSString *)message background:(ZTAlertBackground *)background;
++ (instancetype _Nonnull)alertWithTitle:(NSString * _Nullable)title message:(NSString * _Nullable)message background:(ZTAlertBackground * _Nullable)background;
+- (instancetype _Nonnull)initWithTitle:(NSString * _Nullable)title message:(NSString * _Nullable)message background:(ZTAlertBackground * _Nullable)background;
 
-- (void)addItem:(ZTAlertItem *)item;
-- (void)addTextFieldWithConfigurationHandler:(void (^)(UITextField *textField))configurationHandler;
+- (void)addItem:(ZTAlertItem *_Nullable)item;
+- (void)addTextFieldWithConfigurationHandler:(void (^_Nullable)(UITextField * _Nonnull textField))configurationHandler;
 
 - (void)show; // 显示出来（应该使用这个方法来显示，而不是自己add到view里面）
 - (void)hide:(BOOL)animation; // 隐藏（不要自己removeFromSuperview来隐藏）

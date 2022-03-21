@@ -10,8 +10,10 @@
 
 @interface NSString (MD5)
 
-- (NSString *)md5HexDigest; // 获取MD5
+/// 获取MD5
+- (NSString * _Nonnull)md5HexDigest;
 
-- (NSString *)imageType; // 获取url中图片后缀
+/// 获取url中图片后缀
+- (NSString * _Nonnull)imageType;
 
 @end
