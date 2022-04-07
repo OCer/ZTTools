@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ZTTools'
-  s.version          = '0.1.5'
+  s.version          = '0.1.6'
   s.summary          = '工具库'
 
   s.description      = <<-DESC
@@ -30,7 +30,7 @@ Pod::Spec.new do |s|
   s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 
-  s.vendored_frameworks = 'ZTTools/Classes/ZTTools.framework'
+  s.vendored_frameworks = 'ZTTools/Classes/ZTTools.xcframework'
   s.frameworks = 'UIKit', 'Foundation', 'Photos', 'UserNotifications', 'AVFoundation', 'CoreGraphics'
   s.dependency 'AFNetworking'
   s.dependency 'Masonry'

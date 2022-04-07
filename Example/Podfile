@@ -8,7 +8,7 @@ project '../ZTToolsSDK/ZTToolsSDK.xcodeproj' # 别的工程路径
 
 # 主工程（带podfile的工程）
 target 'ZTTools_Example' do 
-  #use_frameworks!
+  use_frameworks!
   project 'ZTTools.xcodeproj'
   pod 'ZTTools', :path => '../'
 end

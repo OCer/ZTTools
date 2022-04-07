@@ -7,7 +7,7 @@
 //
 
 #import "ZTViewController.h"
-#import <ZTTools/ZTToolsHeader.h>
+#import <ZTTools/ZTTools.h>
 
 @interface ZTViewController ()
 
@@ -31,6 +31,7 @@
 - (void)test
 {
     NSLog(@"%@", [ZTDeviceManager platformString]);
+    NSLog(@"%@", [ZTToolBox sdkVersion]);
 //    [ZTSheetView showSheetViewWithData:@[@"1", @"2", @"3"] block:nil cancelBlock:nil];
 }
 

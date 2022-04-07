@@ -1,6 +1,6 @@
 {
   "name": "ZTTools",
-  "version": "0.1.2",
+  "version": "0.1.6",
   "summary": "工具库",
   "description": "私有工具库，用到的东西都会放到这里，工具库也分为权限、逻辑、UI等",
   "homepage": "https://github.com/OCer/ZTTools",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/OCer/ZTTools.git",
-    "tag": "0.1.2"
+    "tag": "0.1.6"
   },
   "platforms": {
     "ios": "11.0"
@@ -21,7 +21,13 @@
   "xcconfig": {
     "OTHER_LDFLAGS": "-ObjC"
   },
-  "vendored_frameworks": "ZTTools/Classes/ZTTools.framework",
+  "pod_target_xcconfig": {
+    "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64"
+  },
+  "user_target_xcconfig": {
+    "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64"
+  },
+  "vendored_frameworks": "ZTTools/Classes/ZTTools.xcframework",
   "frameworks": [
     "UIKit",
     "Foundation",
